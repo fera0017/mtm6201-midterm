@@ -23,12 +23,39 @@
     <!-- Let keyboard users jump to the main content -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- The logo and navigation will go here -->
     <header>
+        <div class="page head">
+            <!-- Go back to the start of the site -->
+            <a href="index.html">
+                <img src="images/my-coffee-shop-logo.svg" alt="My Coffee House">
+            </a>
+
+            <!-- Move between the page sections -->
+            <nav aria-label="Main navigation">
+                <ul class="links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- The main page sections will go here -->
     <main id="main">
+        <!-- Introduce the coffee house -->
+        <section class="home" aria-labelledby="home-title">
+            <div class="page">
+                <div class="home-text">
+                    <h1 id="home-title">Experience coffee like never before</h1>
+                    <p>
+                        We craft more than beverages; we curate memories,
+                        one flavorful moment at a time. Embrace the aroma
+                        and let every visit be a chapter in your coffee story.
+                    </p>
+                    <a class="btn-link" href="#menu">Explore our menu</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- The copyright information will go here -->

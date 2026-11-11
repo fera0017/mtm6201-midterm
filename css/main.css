@@ -1,9 +1,9 @@
-/* Keep element sizing easy to manage */
+/* Use the same sizing rules for every element */
 * {
     box-sizing: border-box;
 }
 
-/* Save the page colors in one place */
+/* Keep the project colors together */
 :root {
     --white: #ffffff;
     --black: #000000;
@@ -12,7 +12,7 @@
     --page-background: #f3f0e9;
 }
 
-/* Set the main page font and background */
+/* Set the main text style and page color */
 body {
     margin: 0;
     background-color: var(--page-background);
@@ -21,7 +21,7 @@ body {
     font-size: 1rem;
 }
 
-/* Use another font for headings and navigation */
+/* Use Lato for titles and navigation */
 h1,
 h2,
 h3,
@@ -29,7 +29,7 @@ nav {
     font-family: "Lato", sans-serif;
 }
 
-/* Set heading sizes for small screens */
+/* Choose heading sizes for phones */
 h1 {
     font-size: 2.027rem;
 }
@@ -42,12 +42,12 @@ h3 {
     font-size: 1.424rem;
 }
 
-/* Keep buttons in the body font */
+/* Buttons use the body font */
 button {
     font-family: "Karla", sans-serif;
 }
 
-/* Center the page content */
+/* Keep content centered on the page */
 .page {
     width: 100%;
     max-width: 1200px;
@@ -55,13 +55,13 @@ button {
     padding: 0 1rem;
 }
 
-/* Keep the skip link out of view until needed */
+/* Hide the skip link until it receives focus */
 .skip-link {
     position: absolute;
     left: -9999px;
 }
 
-/* Show the skip link when someone tabs to it */
+/* Make the skip link easy to see */
 .skip-link:focus {
     left: 1rem;
     top: 1rem;
@@ -71,7 +71,114 @@ button {
     z-index: 10;
 }
 
-/* Set heading sizes for tablet screens */
+/* Style the dark site header */
+header {
+    background-color: var(--black);
+    padding: 1rem 0;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.head img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.links a {
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.links a:hover,
+.links a:focus-visible {
+    color: var(--gold);
+}
+
+.links a:focus-visible,
+.head > a:focus-visible,
+.btn-link:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+}
+
+/* Show the coffee photo behind the welcome message */
+.home {
+    display: flex;
+    min-height: 25rem;
+    align-items: center;
+    padding: 4rem 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("../images/hero-background.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+    text-align: center;
+}
+
+.home .page {
+    width: 100%;
+}
+
+.home-text {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.home h1 {
+    margin: 0 0 1rem;
+    font-size: 2.027rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.home p {
+    margin: 0 0 2rem;
+    font-size: 1rem;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    border: 2px solid transparent;
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn-link:hover,
+.btn-link:focus-visible {
+    background-color: var(--gold);
+}
+
+.btn-link:active {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+/* Adjust text and spacing for tablets */
 @media (min-width: 48rem) {
     h1 {
         font-size: 2.986rem;
@@ -84,10 +191,27 @@ button {
     h3 {
         font-size: 1.728rem;
     }
+
+    .links {
+        gap: 2rem;
+    }
+
+    .home {
+        min-height: 30rem;
+    }
+
+    .home h1 {
+        font-size: 2.986rem;
+    }
 }
 
-/* Set heading sizes for desktop screens */
+/* Put the menu beside the logo on wider screens */
 @media (min-width: 75rem) {
+    .head {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     h1 {
         font-size: 3.815rem;
     }
@@ -98,5 +222,14 @@ button {
 
     h3 {
         font-size: 1.953rem;
+    }
+
+    .home {
+        min-height: 35rem;
+        background-position: center 30%;
+    }
+
+    .home h1 {
+        font-size: 3.815rem;
     }
 }
