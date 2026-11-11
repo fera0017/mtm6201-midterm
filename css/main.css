@@ -1,0 +1,102 @@
+/* Keep element sizing easy to manage */
+* {
+    box-sizing: border-box;
+}
+
+/* Save the page colors in one place */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --gold: #d69e3d;
+    --brown: #966f2c;
+    --page-background: #f3f0e9;
+}
+
+/* Set the main page font and background */
+body {
+    margin: 0;
+    background-color: var(--page-background);
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+}
+
+/* Use another font for headings and navigation */
+h1,
+h2,
+h3,
+nav {
+    font-family: "Lato", sans-serif;
+}
+
+/* Set heading sizes for small screens */
+h1 {
+    font-size: 2.027rem;
+}
+
+h2 {
+    font-size: 1.802rem;
+}
+
+h3 {
+    font-size: 1.424rem;
+}
+
+/* Keep buttons in the body font */
+button {
+    font-family: "Karla", sans-serif;
+}
+
+/* Center the page content */
+.page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Keep the skip link out of view until needed */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Show the skip link when someone tabs to it */
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    color: #000000;
+    z-index: 10;
+}
+
+/* Set heading sizes for tablet screens */
+@media (min-width: 48rem) {
+    h1 {
+        font-size: 2.986rem;
+    }
+
+    h2 {
+        font-size: 2.488rem;
+    }
+
+    h3 {
+        font-size: 1.728rem;
+    }
+}
+
+/* Set heading sizes for desktop screens */
+@media (min-width: 75rem) {
+    h1 {
+        font-size: 3.815rem;
+    }
+
+    h2 {
+        font-size: 3.052rem;
+    }
+
+    h3 {
+        font-size: 1.953rem;
+    }
+}
