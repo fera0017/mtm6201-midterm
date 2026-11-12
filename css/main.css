@@ -215,6 +215,83 @@ header {
     grid-column: span 2;
 }
 
+/* Add space around the benefits section */
+.highlights {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.highlights h2 {
+    margin: 0 0 3rem;
+    text-transform: uppercase;
+}
+
+.highlightlist {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.highlight {
+    text-align: center;
+}
+
+.highlight img {
+    width: 6rem;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.highlight h3 {
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+}
+
+.highlight p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Use a dark photo behind the menu and location links */
+.explore {
+    padding: 4rem 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/coffee-shop.jpeg");
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+    text-align: center;
+}
+
+.explorelinks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.explore h2 {
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+}
+
+.secondary {
+    border-color: var(--white);
+    background-color: transparent;
+    color: var(--white);
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.secondary:active {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
 /* Adjust text and spacing for tablets */
 @media (min-width: 48rem) {
     h1 {
@@ -255,6 +332,22 @@ header {
         height: 100%;
         aspect-ratio: auto;
     }
+
+    .highlightlist {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem 2rem;
+    }
+
+    .highlight {
+        flex: 0 0 calc(50% - 1rem);
+    }
+
+    .explorelinks {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
 
 /* Put the menu beside the logo on wider screens */
@@ -283,5 +376,9 @@ header {
 
     .home h1 {
         font-size: 3.815rem;
+    }
+
+    .highlight {
+        flex: 0 0 calc(33.333% - 1.5rem);
     }
 }
