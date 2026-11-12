@@ -292,6 +292,123 @@ header {
     color: var(--black);
 }
 
+/* Keep the story image above the text until the layout has room for two columns */
+.history {
+    padding: 4rem 0;
+}
+
+.historygrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.shopphoto img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.shopdetails h2 {
+    margin: 0 0 1.5rem;
+    text-transform: uppercase;
+}
+
+.shopdetails > p:not(.yellow-text) {
+    margin: 0 0 1rem;
+    line-height: 1.5;
+}
+
+.darkbtn {
+    margin-top: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.darkbtn:hover,
+.darkbtn:focus-visible {
+    background-color: var(--brown);
+}
+
+/* Use a dark background so the white review text stands out from the photos */
+.voices {
+    padding: 4rem 0;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.voices h2 {
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+}
+
+.sayings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.saying {
+    position: relative;
+    display: flex;
+    min-height: 28rem;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.saying > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sayinginfo {
+    position: relative;
+    width: 100%;
+    padding: 4rem 1rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.sayinginfo blockquote {
+    margin: 0;
+}
+
+.sayinginfo p {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.sayinginfo h3.reviewer {
+    margin: 0;
+    color: var(--gold);
+    font-family: "Karla", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+/* Match the footer to the review section and separate its copyright with a line */
+footer {
+    padding-bottom: 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+}
+
+footer .page {
+    padding-top: 1.5rem;
+    border-top: 1px solid #555555;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
 /* Adjust text and spacing for tablets */
 @media (min-width: 48rem) {
     h1 {
@@ -348,10 +465,28 @@ header {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+
+    .historygrid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .voices h2 {
+        max-width: 60%;
+    }
+
+    .sayings {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .saying {
+        min-height: 24rem;
+    }
 }
 
 /* Put the menu beside the logo on wider screens */
-@media (min-width: 75rem) {
+@media (min-width: 1100px) {
     .head {
         flex-direction: row;
         justify-content: space-between;
