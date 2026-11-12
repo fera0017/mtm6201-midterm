@@ -122,6 +122,8 @@ header {
 }
 
 /* Show the coffee photo behind the welcome message */
+   /* AI prompt Make the hero background image cover the whole section without stretching and keep
+    the important part of the photo visible on different screen sizes */
 .home {
     display: flex;
     min-height: 25rem;
@@ -131,6 +133,7 @@ header {
         linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
         url("../images/hero-background.jpg");
     background-position: center;
+
     background-size: cover;
     color: var(--white);
     text-align: center;
@@ -178,6 +181,40 @@ header {
     color: var(--white);
 }
 
+/* Add space around the photo section */
+.welcome {
+    padding: 4rem 0;
+}
+
+.yellow-text {
+    margin: 0 0 0.5rem;
+    color: var(--gold);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.welcome h2 {
+    margin: 0 0 1.5rem;
+    text-transform: uppercase;
+}
+
+.coffeepics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.coffeepics img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.coffeepics .big {
+    grid-column: span 2;
+}
+
 /* Adjust text and spacing for tablets */
 @media (min-width: 48rem) {
     h1 {
@@ -202,6 +239,21 @@ header {
 
     .home h1 {
         font-size: 2.986rem;
+    }
+
+    .welcome h2 {
+        max-width: 60%;
+    }
+
+    .coffeepics {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .coffeepics .big {
+        grid-column: 1;
+        grid-row: span 2;
+        height: 100%;
+        aspect-ratio: auto;
     }
 }
 
